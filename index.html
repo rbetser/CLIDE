@@ -91,10 +91,10 @@
 
     .insights-container { display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; justify-content:center; margin-top:8px; }
     .insights-grid {
-      flex: 1 1 80%;
+      flex: 1 1 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      grid-template-columns: 1fr;   /* ONE insight per row */
+      gap: 28px;
     }
     @media (max-width: 700px) { .insights-grid { grid-template-columns: 1fr; } }
 
@@ -111,10 +111,30 @@
     .card-insight:hover { transform: translateY(-8px); box-shadow: 0 22px 40px rgba(162, 89, 255, 0.2); }
     .card-insight .upper { flex: 0 0 auto; text-align: center; }
     .card-insight .upper h3 { color: var(--accent); margin: 0 0 12px 0; }
-    .card-insight .bottom { display:flex; gap:18px; align-items:flex-start; justify-content:center; flex-wrap:wrap; }
-    .card-insight .bottom .left { flex:0 0 45%; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .card-insight .bottom .left img { width:200px; height:200px; object-fit:contain; border-radius:14px; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
-    .card-insight .bottom .right { flex:0 0 45%; display:flex; flex-direction:column; justify-content:flex-start; }
+    .card-insight .bottom {
+      display: flex;
+      flex-direction: row;      /* image LEFT, text RIGHT */
+      gap: 24px;
+      align-items: center;
+    }
+    
+    .card-insight .bottom .left {
+      flex: 0 0 55%;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card-insight .bottom .left img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+    
+    .card-insight .bottom .right {
+      flex: 0 0 45%;
+    }
     @media (max-width:900px) {
       .card-insight .bottom .left,
       .card-insight .bottom .right { flex:1 1 100%; }
@@ -312,9 +332,10 @@
     <div class="section-content">
       <h2>Datasets</h2>
       <p>
-        Synthetic datasets used in our experiments are available on Hugging Face:
+        In addition to existing datasets of general and artistic images (real and generated), we generate new datasets in two practical domains:
+        damaged cars and invoices. Damaged cars are generated using 5 generators and the invoice images are generated using a single model. Synthetic datasets are available at:
         <a href="https://huggingface.co/datasets/Fujitsu-FRE/clide_synthetic_datasets" target="_blank" rel="noopener">
-          Fujitsu-FRE/clide_synthetic_datasets
+          clide_synthetic_datasets
         </a>.
       </p>
     </div>

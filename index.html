@@ -269,7 +269,7 @@
               <div class="right">
                 <p>
                   All existing zero-shot detectors <strong>implicitly</strong> model the likelihood that an image is real.
-                  CLIDE <strong>explicitly</strong> models this likelihood and enables <strong>domain adaptation</strong>, making it suitable for practical deployment.
+                  CLIDE <strong>explicitly</strong> models this likelihood and by operating under a Gaussian model.
               </div>
             </div>
           </div>
@@ -277,10 +277,11 @@
           <div class="card-insight">
             <div class="upper"><h3>Domain-specific Adaptation</h3></div>
             <div class="bottom">
-              <div class="left"><img src="misc/insight_domain.png" alt="Domain adaptation diagram"></div>
+              <div class="left"><img src="misc/domains.JPG" alt="Domain adaptation diagram"></div>
               <div class="right">
                 <p>
-                  Use domain-representative sets to specialize statistics, improving performance on practical target domains (e.g., damaged cars, invoices).
+                  Use <strong>domain-representative real</strong> image examples for <strong>local statistics</strong>, improving performance on practical target domains (e.g., damaged cars, invoices).
+                  We empirically validate <strong>Gaussian behavior</strong> in subspaces using <strong>normality tests</strong>.
                 </p>
               </div>
             </div>

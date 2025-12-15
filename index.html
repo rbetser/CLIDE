@@ -221,15 +221,15 @@
           <p>
             We present <strong>CLIDE</strong>, a zero-shot method for detecting AI-generated images using a
             <strong>conditional likelihood approximation</strong> over CLIP embeddings. Our approach applies a
-            <strong>whitening transform</strong> to image features and uses the resulting approximate Gaussian likelihood
-            as a detection score—<strong>without training on generated images</strong>. CLIDE supports both
-            <strong>general</strong> and <strong>domain-specific</strong> settings and is designed to remain effective
+            <strong>whitening transform</strong> to image features and uses the resulting, approximate Gaussian embeddings,
+            to compute likelihood values used as a detection score. Our method operates <strong>without training<strong> or access to <strong>generated images</strong>. 
+            CLIDE supports both <strong>general</strong> and <strong>domain-specific</strong> settings and is designed to remain effective
             under practical distribution shifts across generators and domains.
           </p>
         </div>
         <div class="abstract-teaser-wrapper">
           <!-- TODO: add your teaser/poster image -->
-          <img id="abstract-teaser" src="misc/teaser.png" alt="CLIDE teaser figure">
+          <img id="abstract-teaser" src="misc/poster.png" alt="CLIDE teaser figure">
         </div>
       </div>
     </div>
